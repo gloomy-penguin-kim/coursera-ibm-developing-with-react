@@ -1,0 +1,73 @@
+npm create vite@latest
+
+react
+
+javascript 
+
+npm run dev 
+
+
+React: 
+	- when a component is created or updated, five methods are called in the same order: 
+		getDerivedStateFromProps()
+		shouldComponentUpdate()
+		render()
+		getSnapsotBeforeUpdate()
+		componentDidUpdate() 
+
+mounting. updating, unmounting 
+
+Mount Phase
+-> componentWillMount() 
+	-> render()
+		-> componentDidMount() 
+
+Update Phase 
+-> getDerivatedStateFromProps(): reflect updated props in the state
+	-> getSnapshoptBeforeUpdate(): access previous props
+		-> componentDidUpdate(): create side effects
+			-> render(): update UI per state changes
+
+Unmounting 
+-> componentWillUnmount(): cleanup to prevent memory leaks
+	-> cancel network requests, remove listners 
+
+- React components enable you to break up the user interface into separate parts that can be reused and handled independently. 
+
+- The four types of React components are functional, class, pure, and high-order components.
+
+- A class component in React is a JavaScript class that extends the React Component class from the React library. 
+
+- Class components manage state, handle lifecycle events, and define component methods.
+
+- In React, props, or properties, send data from a parent component to a child component.
+
+ - Event handling is the process of responding to user interactions, such as clicks, mouseovers, mouseouts, form submissions, and so on, within a React application.
+
+- State is a plain JavaScript object that React uses to represent information about the component’s current situation.
+
+- Any changes in the state data cause the re-rendering of the component to reflect the change.
+
+- Components can create and manage their data with states, whereas they receive data from outside with props.
+
+- The lifecycle of each React component encompasses three key phases: Mounting, updating, and unmounting.
+
+- In component lifecycle, components are created or mounted on the DOM, they grow by updating, and then die or are unmounted on the DOM.
+
+
+Principles of component composition Include: 
+	- abstraction
+	- reusability 
+	- hierarchy
+	- props and children 
+	- higher-order components 
+
+benefits of hooks 
+	- reuse code logic
+	- no need to change hierarcy or use nesting 
+	- add state management to function components 
+
+mounting phase: 
+	1. intialization
+	2. state initialization
+	3. side effects 	
