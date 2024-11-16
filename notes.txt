@@ -57,10 +57,15 @@ Unmounting
 
 Principles of component composition Include: 
 	- abstraction
+		- you can make resuable components that encapsulate ui things 
 	- reusability 
+		- avoid duplicating same code
 	- hierarchy
+		- arrange parent-child, modular design 
 	- props and children 
+		- passing data, parent-child 
 	- higher-order components 
+		- functions that accept components as input or return them 
 
 benefits of hooks 
 	- reuse code logic
@@ -69,5 +74,167 @@ benefits of hooks
 
 mounting phase: 
 	1. intialization
-	2. state initialization
-	3. side effects 	
+	2. state initialization: useState hook is used, trigger re-renders
+	3. side effects 
+
+
+
+Testing: 
+
+arrange, act, assert 
+
+Use Jest, basically or React Testing Library (replacement for enzyme)
+
+Notes from the course: 
+
+    Props principles include reusability, unidirectional data flow, customization, and composition.
+
+    You can use the "useState" hook with an event to control a child component.
+
+    You use component composition to combine smaller components to create a complex UI. 
+
+    Principles of component composition include abstraction, reusability, hierarchy, props and children, and higher-order components.
+
+    State management allows you to manage data that can change over time within a component.
+
+    The useState hook enables function components to manage the component's state locally.
+
+    You can use this syntax when using the useState hook:
+
+        Call the "useState" function and pass in the initial state as a parameter.
+
+        Assign the return value to a const array variable using a destructured array.
+
+        The array has two values: the state name and the state name prefixed with the keyword "set."
+
+    The mounting phase initializes the component, sets up the initial state, and performs side effects.
+
+    In the updating phase, React re-invokes the function body and re-evaluates JSX.
+
+    In the unmounting phase, React executes cleanup operations when removing a component from the DOM.
+
+
+
+Components of DOM 
+	- Nodes: element, text, attribute
+	- Elements: content of document 
+	- Attributes: specify property, styles, or behaviors
+	- Events: respond to user interactions
+
+Virtual DOM is important: 
+	- Speed enhancement 
+	- Simple development
+	- Cross-platform capability
+	- State management 
+	- debugging and testing 
+    	
+WHy a virtual DOM?
+	- Efficient updates
+	- Component reusability 
+	- Easy updating of declarative syntax
+	- Improved server-side rendering    	
+
+
+ Coursera Review: 
+
+	You use the array data structures often to store groups of items in a single variable.
+
+    Two important array methods include: 
+
+        map(), which makes it easier to make new arrays by applying a function to each element
+
+        forEach(), which runs a function on each array element without creating a new array
+
+    The DOM allows access to and dynamically manipulates web documents’ content, structure, and style.
+
+    React's virtual DOM abstracts the actual DOM implemented in memory and keeps the virtual DOM in sync with the real DOM by React’s reconciliation process.
+
+    React’s virtual DOM updates only the necessary parts of the DOM, improving the application's performance, especially in scenarios where only specific components or elements need to be updated.
+
+
+unidirectional data flow 
+
+
+What purpose does higher-order function component composition serve?
+idk - Incorrect. Review the Component Composition video.
+- combinie smaller things to make a complex ui 
+
+3 modular parent-child 
+
+4 setName
+
+5 create a second component
+
+6 mounting 
+
+What purpose does the empty dependency array, [], serve?
+7 empty dependency,not declares/inits - Review the Function Component Lifecycle video.
+In this example, the useEffect hook fetches
+data from https//api.example.com/data when the component mounts.
+It then sets the retrieved data using setData, which with an empty dependency
+array to ensure the effect runs only once after the initial render. 
+
+8 not splice or slice 
+9 attributes
+10 re-rendingeringn 
+
+
+
+Learning Objectives
+
+    Describe hooks and their advantages
+    	- function components equivalent to class components, provide access to state, preserve state 
+    	- advantages: easier to read code, less code, optimized code, simplified code, handle events and logic, performance boost
+
+    Identify the best practices of using hooks
+    	- summary: 
+    	- only use with function components, call only at top of component tree 
+    	- don't use witih normal JS functions
+    	- don't use with loops, conditionals, or nested functions 
+    	- for use with node.js, npm v5.2 or higher, set up with the create-react-app tool 
+
+    custom vs standard hooks 
+    	- useState: add state to a function component
+    	- useEffect: manages side effects
+    	- useContext: manages context changes
+    	- useReducer: manages Redux state changes
+    	- custom: 
+    		- prefix with use 
+    		- composed of one or more hooks 
+    		- same features as normal js functions 
+
+
+    Define the role of useEffect and side effects in React
+    	- useEffect: a react hook allows you to perform side effects in functional components 
+    	- side effect: any operation needed to execute on page load, data from api, subscribe for events 
+    		- asynchronously effecting state or UI 
+
+    Describe dependencies with useEffect
+    	- variable or values used to determine when useEffect should run 
+    	- specified as an array argument 
+    	- [] empty array: runs only once at the time of loading 
+    	- [foods]: runs whenever these values change 
+    	- no array: effect runs on each render regardless of changing values 
+
+    custom hook example: resuse logic across componenets, abstract complex logic 
+
+
+    Describe how third-party services retrieve data using the fetch api method and axios library
+    	-  APIs let your application exchange data with outside services 
+    		- offered by 3rd party services
+    		- enable aquiring data, executing operations, and adding features 
+    		- multiple API methods such as fetch api and axios library 
+    	- external services are any program, platform, or infrastructure your application uses to connect to and work with other applications over a network 
+	Axios: 
+		- npm install axios
+		- import axios from axios
+		- axios.get(apiUrl).then(response => { console.log(response); }).catch(error => { console.log(error)})    	 
+    Describe forms and types of inputs
+    	-
+
+    Identify the advantages and uses of using Redux
+    Explain essential concepts of Redux including actions, the store, and reducers.
+    Compare and contrast synchronous and asynchronous operations
+    Compare and contrast application state to component states
+    Explain how to use the Redux toolkit utilities used to streamline Redux tasks
+
